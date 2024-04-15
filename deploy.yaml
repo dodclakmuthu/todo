@@ -1,0 +1,20 @@
+import: 
+  - recipe/laravel.php
+
+config:
+  repository: 'https://github.com/dodclakmuthu/todo-laravel-api.git'
+
+hosts:
+  dclakmuthu.xyz:
+    remote_user: ubuntu
+    deploy_path: '/var/www/dclakmuthu.xyz'
+  dev.dclakmuthu.xyz:
+    remote_user: ubuntu
+    deploy_path: '/var/www/dev.dclakmuthu.xyz'
+
+tasks:
+  build:
+    - run: uptime  
+
+after:
+  deploy:failed: deploy:unlock
