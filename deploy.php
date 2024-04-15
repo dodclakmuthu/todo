@@ -33,13 +33,13 @@ task('deploy:secrets', function () {
 host('dclakmuthu.xyz')
   ->hostname('18.235.35.223')
   ->stage('production')
-  ->user('ubuntu')
+  ->user('root')
   ->set('deploy_path', '/var/www/dclakmuthu.xyz');
 
 host('dev.dclakmuthu.xyz')
   ->hostname('18.235.35.223')
   ->stage('dev')
-  ->user('ubuntu')
+  ->user('root')
   ->set('deploy_path', '/var/www/dev.dclakmuthu.xyz');
 
 after('deploy:failed', 'deploy:unlock');
