@@ -10,6 +10,7 @@ class TaskController extends Controller
   public function getTasks(Request $request)
   {
     $tasks = TaskRepository::getAllTasks();
-    return response()->json($tasks, 200);
+    $data = ['success' => true,'tasks'=> $tasks];
+    return response()->json($data, 200);
   }
 }
