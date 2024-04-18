@@ -14,6 +14,7 @@ add('writable_dirs', []);
 // Hosts
 
 host('dclakmuthu.xyz')
+    ->set('stage', 'dev')
     ->set('remote_user', 'ubuntu')
     ->set('deploy_path', '/var/www/dclakmuthu.xyz');
 
