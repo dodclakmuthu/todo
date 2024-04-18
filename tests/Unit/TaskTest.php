@@ -11,6 +11,7 @@ class TaskTest extends TestCase
   public function test_get_tasks(): void
   {
     $response = $this->getJson('/api/tasks');
+    print_r($response, true);
     $response->assertStatus(200);
     $response->assertJson(['success' => true, 'tasks' => []]);
     $response->assertJsonStructure(
