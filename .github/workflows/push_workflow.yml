@@ -8,7 +8,7 @@ on:
 
 jobs:
   app-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     # services:
     #   mysql:
     #     image: mysql:5.7
@@ -53,7 +53,7 @@ jobs:
 #           path: public
   build-js-dev:
     name: Build JavaScript/CSS for DEV Server
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: app-tests
     if: github.ref == 'refs/heads/dev'
     steps:
@@ -97,7 +97,7 @@ jobs:
 #         run: dep deploy production --tag=${{ env.GITHUB_REF }} -vvv
   deploy-dev:
     name: Deploy Project to dev Server
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: [build-js-dev, app-tests]
     if: github.ref == 'refs/heads/dev'
     steps:
